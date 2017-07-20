@@ -42,6 +42,8 @@ PRODUCT_COPY_FILES += \
 	vendor/sony/shinano-common-caf/proprietary/bin/wvkbd:system/bin/wvkbd \
 	vendor/sony/shinano-common-caf/proprietary/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml \
 	vendor/sony/shinano-common-caf/proprietary/etc/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
+	vendor/sony/shinano-common-caf/proprietary/bin/iop:system/bin/iop\
+	vendor/sony/shinano-common-caf/proprietary/etc/permissions/com.qualcomm.qti.Performance.xml:system/etc/permissions/com.qualcomm.qti.Performance.xml \
 	vendor/sony/shinano-common-caf/proprietary/etc/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
 	vendor/sony/shinano-common-caf/proprietary/etc/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
 	vendor/sony/shinano-common-caf/proprietary/etc/firmware/a300_pfp.fw:system/etc/firmware/a300_pfp.fw \
@@ -197,6 +199,9 @@ PRODUCT_COPY_FILES += \
 	vendor/sony/shinano-common-caf/proprietary/lib/libstartup-reason.so:system/lib/libstartup-reason.so \
 	vendor/sony/shinano-common-caf/proprietary/lib/libta.so:system/lib/libta.so \
 	vendor/sony/shinano-common-caf/proprietary/lib/lib_uncontrolled_rooting_status.so:system/lib/lib_uncontrolled_rooting_status.so \
+	vendor/sony/shinano-common-caf/proprietary/lib/libqti-iop.so:system/lib/libqti-iop.so \
+	vendor/sony/shinano-common-caf/proprietary/lib/libqti-iop-client.so:system/lib/libqti-iop-client.so \
+	vendor/sony/shinano-common-caf/proprietary/lib/libqti_performance.so:system/lib/libqti_performance.so \
 	vendor/sony/shinano-common-caf/proprietary/sbin/tad_static:system/sbin/tad_static \
 	vendor/sony/shinano-common-caf/proprietary/sbin/wait4tad_static:system/sbin/wait4tad_static \
 	vendor/sony/shinano-common-caf/proprietary/vendor/camera/flash.dat:system/vendor/camera/flash.dat \
@@ -347,7 +352,7 @@ PRODUCT_COPY_FILES += \
 	vendor/sony/shinano-common-caf/proprietary/vendor/lib/libdiag.so:system/vendor/lib/libdiag.so \
 	vendor/sony/shinano-common-caf/proprietary/vendor/lib/lib-dplmedia.so:system/vendor/lib/lib-dplmedia.so \
 	vendor/sony/shinano-common-caf/proprietary/vendor/lib/libdrmfs.so:system/vendor/lib/libdrmfs.so \
-	 vendor/sony/shinano-common-caf/proprietary/vendor/lib/libdrmdiag.so:system/vendor/lib/libdrmdiag.so \
+	vendor/sony/shinano-common-caf/proprietary/vendor/lib/libdrmdiag.so:system/vendor/lib/libdrmdiag.so \
 	vendor/sony/shinano-common-caf/proprietary/vendor/lib/libdrmtime.so:system/vendor/lib/libdrmtime.so \
 	vendor/sony/shinano-common-caf/proprietary/vendor/lib/libdsi_netctrl.so:system/vendor/lib/libdsi_netctrl.so \
 	vendor/sony/shinano-common-caf/proprietary/vendor/lib/libdsutils.so:system/vendor/lib/libdsutils.so \
@@ -489,4 +494,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libTimeService \
     TimeService \
-    libtime_genoff
+    libtime_genoff \
+    QPerformance
+
+PRODUCT_BOOT_JARS += QPerformance
